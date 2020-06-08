@@ -38,6 +38,8 @@ public class JupyhaiAction extends AnAction {
         Project currentProject = event.getProject();
         valohaiConfig = currentProject.getService(ValohaiConfig.class);
 
+        // Access current projects Jupyter settings in IntelliJ
+        // ToDo: Access Notebook server settings and automatically set the url
         //JupyterSettings jupyter = ServiceManager.getService(JupyterSettings.class);
 
         String notebook = "N/A";
