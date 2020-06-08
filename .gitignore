@@ -1,0 +1,13 @@
+*.class
+*.ctxt
+*.ear
+*.jar
+*.log
+*.nar
+*.rar
+*.tar.gz
+*.war
+*.zip
+.DS_Store
+.mtj.tmp/
+hs_err_pid*
