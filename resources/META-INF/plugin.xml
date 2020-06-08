@@ -1,0 +1,37 @@
+<idea-plugin>
+  <id>com.valohai.jupyhai.intellij</id>
+  <name>IntelliJ Jupyhai plugin</name>
+  <version>1.0</version>
+  <vendor email="support@valohai.com" url="http://www.valohai.com">Valohai</vendor>
+
+  <description><![CDATA[
+      Create Valohai notebook executions directly from IntelliJ
+    ]]></description>
+
+  <change-notes><![CDATA[
+      Initial version of the Valohai plugin for IntelliJ that allows creation of Notebook executions directly from IntelliJ.
+    ]]>
+  </change-notes>
+
+  <!-- please see https://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/build_number_ranges.html for description -->
+  <idea-version since-build="173.0"/>
+
+  <!-- please see https://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/plugin_compatibility.html
+       on how to target different products -->
+  <depends>com.intellij.modules.platform</depends>
+
+  <extensions defaultExtensionNs="com.intellij">
+    <!-- Add your extensions here -->
+    <projectConfigurable groupId="tools" displayName="Valohai Configuration" id="preferences.ValohaiConfiguration" instance="com.valohai.jupyhai.intellij.ValohaiConfiguration" />
+    <projectService serviceInterface="com.valohai.jupyhai.intellij.ValohaiConfig" serviceImplementation="com.valohai.jupyhai.intellij.ValohaiConfig"/>
+  </extensions>
+
+  <actions>
+    <!-- Add your actions here -->
+    <action id="com.valohai.jupyhai.intellij.JupyhaiAction" class="com.valohai.jupyhai.intellij.JupyhaiAction"
+            text="Create a Valohai execution" description="Create a Notebook execution on Valohai" icon="JupyhaiPluginIcons.LOGO">
+      <add-to-group group-id="ProjectViewPopupMenu" anchor="first"/>
+    </action>
+  </actions>
+
+</idea-plugin>
